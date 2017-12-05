@@ -1,0 +1,10 @@
+Cython>=0.25.2
+gym<=0.7.4
+jinja2>=2.9
+pyzmq>=16.0.2
+matplotlib>=1.0.0
+click
+python-dateutil
+numpy
+scipy
+psutil

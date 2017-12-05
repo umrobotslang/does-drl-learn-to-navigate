@@ -1,0 +1,42 @@
+Creating map: random_mazes_001_intra_5x5_001; , Completed
+class random_mazes_001_intra_5x5(GymRegisterDeepmindLabConfig):
+    def __init__(self, **kw):
+        from model import add_global_model
+        from l2nmodel import LSTMPolicyGoalLocation2D
+        add_global_model(LSTMPolicyGoalLocation2D)
+        kwargs = dict(
+            model = 'LSTMPolicyGoalLocation2D'
+            , DeepmindLab = Namespace(
+                level_script = 'random_mazes_001_intra_5x5_000'
+                , action_mapper = 'discrete'
+		, kwargs = dict(wall_penalty_max= 0.2 
+                , wall_penalty_max_dist = 30) 
+                ))
+        kwargs = dict_update_recursive(kwargs, kw) 
+        super(random_mazes_001_intra_5x5, self).__init__(**kwargs)
+
+
+
+Creating map: random_mazes_005_intra_5x5_001; , Completed
+Creating map: random_mazes_005_intra_5x5_002; , Completed
+Creating map: random_mazes_005_intra_5x5_003; , Completed
+Creating map: random_mazes_005_intra_5x5_004; , Completed
+Creating map: random_mazes_005_intra_5x5_005; , Completed
+class random_mazes_005_intra_5x5(GymRegisterDeepmindLabConfig):
+    def __init__(self, **kw):
+        from model import add_global_model
+        from l2nmodel import LSTMPolicyGoalLocation2D
+        add_global_model(LSTMPolicyGoalLocation2D)
+        kwargs = dict(
+            model = 'LSTMPolicyGoalLocation2D'
+            , DeepmindLab = Namespace(
+                level_script = 'random_mazes_005_intra_5x5_000'
+                , action_mapper = 'discrete'
+		, kwargs = dict(wall_penalty_max= 0.2 
+                , wall_penalty_max_dist = 30) 
+                ))
+        kwargs = dict_update_recursive(kwargs, kw) 
+        super(random_mazes_005_intra_5x5, self).__init__(**kwargs)
+
+
+

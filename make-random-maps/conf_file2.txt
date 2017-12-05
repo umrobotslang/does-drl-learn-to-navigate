@@ -1,0 +1,19 @@
+Creating map: random_mazes_001_intra_9x9_001; , Completed
+class random_mazes_001_intra_9x9(GymRegisterDeepmindLabConfig):
+    def __init__(self, **kw):
+        from model import add_global_model
+        from l2nmodel import LSTMPolicyGoalLocation2D
+        add_global_model(LSTMPolicyGoalLocation2D)
+        kwargs = dict(
+            model = 'LSTMPolicyGoalLocation2D'
+            , DeepmindLab = Namespace(
+                level_script = 'random_mazes_001_intra_9x9_000'
+                , action_mapper = 'discrete'
+		, kwargs = dict(wall_penalty_max= 0.2 
+                , wall_penalty_max_dist = 30) 
+                ))
+        kwargs = dict_update_recursive(kwargs, kw) 
+        super(random_mazes_001_intra_9x9, self).__init__(**kwargs)
+
+
+

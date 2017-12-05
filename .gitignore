@@ -1,0 +1,10 @@
+*.pyc
+.*-sys-dependencies
+.emacs.desktop*
+.*.swp
+build
+.nfs*
+important-experiments/*
+a3c-random-mazes/*
+hidden-states-dataset/*
+.builddeps

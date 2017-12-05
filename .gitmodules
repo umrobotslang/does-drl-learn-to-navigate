@@ -1,0 +1,9 @@
+[submodule "deepmind-lab"]
+	path = deepmind-lab
+	url = git@github.com:umrobotslang/lab.git
+[submodule "openai-a3c-impl"]
+	path = openai-a3c-impl
+	url = git@github.com:umrobotslang/universe-starter-agent.git
+[submodule "BaDhGrICLR2018"]
+	path = BaDhGrICLR2018
+	url = git@github.com:umrobotslang/BaDhGrICLR2018.git

@@ -1,0 +1,46 @@
+Bootstrap: debootstrap
+MirrorURL: http://us.archive.ubuntu.com/ubuntu/
+OSVersion: xenial
+#
+%setup
+mkdir -p ${SINGULARITY_ROOTFS}/projects/implicit-mapping/
+cp -R ../.git/ ${SINGULARITY_ROOTFS}/projects/implicit-mapping/
+
+echo "deb http://us.archive.ubuntu.com/ubuntu/ xenial universe" >> ${SINGULARITY_ROOTFS}/etc/apt/sources.list
+echo "deb-src http://us.archive.ubuntu.com/ubuntu/ xenial universe" >> ${SINGULARITY_ROOTFS}/etc/apt/sources.list
+echo "deb http://us.archive.ubuntu.com/ubuntu/ xenial-updates universe" >> ${SINGULARITY_ROOTFS}/etc/apt/sources.list
+echo "deb-src http://us.archive.ubuntu.com/ubuntu/ xenial-updates universe" >> ${SINGULARITY_ROOTFS}/etc/apt/sources.list
+
+%post
+apt update
+apt install -y tcl tcl8.4-dev build-essential zip unzip python-pip \
+               lua5.2 liblua5.1-0-dev libffi-dev gettext \
+               freeglut3-dev libsdl2-dev libosmesa6-dev python-dev \
+               python-numpy realpath openjdk-8-jdk \
+               python-opencv \
+               build-essential \
+               cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev \
+               libswscale-dev \
+               python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev \
+               libtiff-dev libjasper-dev libdc1394-22-dev \
+               python-pip \
+               lsb-release wget \
+               software-properties-common \
+               liblua5.1-0-dev libsdl2-dev python-dev python-numpy \
+               tcl8.4-dev
+
+# FFmpeg details
+add-apt-repository ppa:jonathonf/ffmpeg-3
+apt update
+apt install -y ffmpeg libav-tools x264 x265
+pip install tensorflow==1.2.1 numpy==1.12.0 scipy==0.18.1
+
+cd /projects/implicit-mapping/ && git reset --hard
+
+# Make bind directories
+mkdir -p /scratch/engin_flux/shurjo
+mkdir -p /home/shurjo
+mkdir -p /z/home/shurjo
+
+%runscript
+exec "$@"`

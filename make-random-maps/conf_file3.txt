@@ -1,0 +1,5 @@
+Creating map: random_mazes_001_intra_13x13_001; , Map compilation terminated.
+Creating map: random_mazes_005_intra_13x13_001; , Map compilation terminated.
+Creating map: random_mazes_020_intra_13x13_001; , Map compilation terminated.
+Creating map: random_mazes_050_intra_13x13_001; , Map compilation terminated.
+Creating map: random_mazes_100_intra_13x13_001; , Map compilation terminated.
