@@ -1,5 +1,8 @@
 # Implicit mapping by learning to navigate
 
+This repository contains the source code corresponding to the paper:
+[Do Deep Reinforcement Learning algorithms really learn to navigate](https://openreview.net/forum?id=BkiIkBJ0b)
+
 ## Replicating experiments
 * Checkout the repository
 
